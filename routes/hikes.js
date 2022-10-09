@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const hikesCtrl = require('../controllers/hikes');
+
+router.get('/', hikesCtrl.index);
 
 module.exports = router;
