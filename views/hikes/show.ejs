@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Name: </div>
+    <div><%= hike.name %></div>
+    <div>Location: </div>
+    <div><%= hike.location %></div>
+    <div>Caption: </div>
+    <div><%= hike.caption %></div>
+    <div>Open Status: </div>
+    <div><%= hike.isOpen ? 'Open' : 'Closed' %></div>
+</section>
+
+<%- include('../partials/footer') %>

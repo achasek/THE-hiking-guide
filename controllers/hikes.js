@@ -4,6 +4,7 @@ module.exports = {
     index,
     new: newHike,
     create,
+    show,
 };
 
 function index(req, res) {
@@ -22,3 +23,10 @@ function create(req, res) {
         res.redirect('/hikes')
     })
 };
+
+function show(req, res) {
+    Hike.findById(req.params.id, function(err, hike) {
+        res.render('hikes/show', {title: 'Hike Details', hike})
+    })
+};
+
