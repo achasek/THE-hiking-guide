@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/hikes" method="POST">
+    <label>What the trail is called:</label>
+    <input type="text" name="name">
+    <label>Where you hiked:</label>
+    <input type="text" name="location">
+    <label>Is it open?</label>
+    <input type="checkbox" name="isOpen" checked>
+    <label>Show us some pictures!</label>
+    <input type="text" placeholder="www.imgur/....com, ..." name="pictures">
+    <label>Tell us about it!:</label>
+    <input type="text" name="caption">
+    <input type="submit" value="Post your story">
+</form>
+
+<%- include('../partials/footer') %>

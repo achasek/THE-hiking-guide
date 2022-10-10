@@ -21,6 +21,11 @@ const hikeSchema = new Schema({
         type: String,
         required: true
     },
+    isOpen: {
+        type: Boolean,
+        default: true
+    },
+    pictures: [String],
     comments: [commentSchema],
 }, {
     timestamps: true
