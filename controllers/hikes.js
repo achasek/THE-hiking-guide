@@ -5,6 +5,7 @@ module.exports = {
     new: newHike,
     create,
     show,
+    delete: deleteHike,
 };
 
 function index(req, res) {
@@ -30,3 +31,17 @@ function show(req, res) {
     })
 };
 
+function deleteHike(req, res, next) {
+    Hike.findOne({'hikes._id': req.params.id, 'hikes.user': req.user._id})
+    .then(function(hike) { 
+        if(!hike) return res.redirect('/hikes')
+        hike.remove(req.params.id)
+        hike.save()
+        .then(function() {
+            res.redirect(`/hikes/${hike._id}`)
+        })
+        .catch(function(err) {
+            return next(err)
+        })
+    })
+};

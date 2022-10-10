@@ -9,6 +9,16 @@
     <div><%= hike.caption %></div>
     <div>Open Status: </div>
     <div><%= hike.isOpen ? 'Open' : 'Closed' %></div>
+    <div>
+        <% hikes.forEach(function(h) { %>
+            <% if(user && user._id.equals(h.user)) { %>
+                <form action="/hikes/<%= h._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete Post</button>
+                </form>
+            <% } %>
+        <% }) %>
+    </div>
+    <div><img src="<%= hike.pictures %>" alt="Pictures of user's hike"></div>
 </section>
 
 <%- include('../partials/footer') %>
