@@ -1,3 +1,4 @@
+const { deleteOne } = require('../models/hike');
 const Hike = require('../models/hike');
 
 module.exports = {
@@ -20,6 +21,7 @@ function newHike(req, res) {
 
 function create(req, res) {
     req.body.isOpen = !!req.body.isOpen
+    req.body.user = req.user._id
     Hike.create(req.body, function(err, hike) {
         res.redirect('/hikes')
     })
@@ -32,16 +34,11 @@ function show(req, res) {
 };
 
 function deleteHike(req, res, next) {
-    Hike.findOne({'hikes._id': req.params.id, 'hikes.user': req.user._id})
-    .then(function(hike) { 
-        if(!hike) return res.redirect('/hikes')
-        hike.remove(req.params.id)
-        hike.save()
+    Hike.deleteOne({'hikes._id': req.params.id})
         .then(function() {
-            res.redirect(`/hikes/${hike._id}`)
+            res.redirect('/hikes')
         })
         .catch(function(err) {
             return next(err)
         })
-    })
 };
