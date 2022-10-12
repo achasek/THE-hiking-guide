@@ -25,6 +25,7 @@ function create(req, res) {
     req.body.isOpen = !!req.body.isOpen
     req.body.user = req.user._id
     Hike.create(req.body, function(err, hike) {
+        console.log(req.body.user)
         res.redirect('/hikes')
     })
 };
@@ -35,14 +36,14 @@ function show(req, res) {
     })
 };
 
-function deleteHike(req, res, next) {
-    Hike.deleteOne({'hikes._id': req.params.id})
-        .then(function() {
-            res.redirect('/hikes')
+function deleteHike(req, res) {
+    Hike.findById(req.params.id,
+        function (err, hike) {
+        hike.remove();
+        hike.save(function (err) {
+            res.redirect('/hikes'); 
         })
-        .catch(function(err) {
-            return next(err)
-        })
+	})
 };
 
 function edit(req, res) {
@@ -57,7 +58,6 @@ function update(req, res) {
     req.body,
     {new: true},
     function(err, hike) {
-        console.log(err)
         res.redirect(`/hikes/${hike._id}`)
     })
 };
