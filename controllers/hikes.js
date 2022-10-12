@@ -7,6 +7,8 @@ module.exports = {
     create,
     show,
     delete: deleteHike,
+    edit,
+    update,
 };
 
 function index(req, res) {
@@ -41,4 +43,21 @@ function deleteHike(req, res, next) {
         .catch(function(err) {
             return next(err)
         })
+};
+
+function edit(req, res) {
+    Hike.findOne({'_id': req.params.id}, function(err, hike) {
+        res.render('hikes/edit', {title: 'Edit Hike', hike})
+    })
+};
+
+function update(req, res) {
+    req.body.isOpen = !!req.body.isOpen
+    Hike.findByIdAndUpdate(req.params.id, 
+    req.body,
+    {new: true},
+    function(err, hike) {
+        console.log(err)
+        res.redirect(`/hikes/${hike._id}`)
+    })
 };

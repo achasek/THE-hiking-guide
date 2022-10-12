@@ -3,6 +3,7 @@ const Hike = require('../models/hike');
 module.exports = {
     create,
     delete: deleteComment,
+    update: updateComment,
 };
 
 function create(req, res) {
@@ -12,7 +13,7 @@ function create(req, res) {
         req.body.avatar = req.user.avatar
         hike.comments.push(req.body)
         hike.save(function(err){
-            console.log(req.body)
+            console.log(err)
             res.redirect(`/hikes/${hike._id}`)
         })
     })
@@ -29,5 +30,16 @@ function deleteComment(req, res) {
         .catch(function(err) {
             return next(err)
         })
+    })
+};
+
+function updateComment(req, res) {
+    Hike.findOne({'comments._id': req.params.id}, function(err,hike) {
+       const commentSubdoc = hike.comments.id(req.params.id)
+       if(!commentSubdoc.user.equals(req.user._id)) return res.redirect(`/hikes/${hike._id}`)
+       commentSubdoc.content = req.body.content;
+       hike.save(function(err) {
+        res.redirect(`/hikes/${hike._id}`)
+       })
     })
 };
