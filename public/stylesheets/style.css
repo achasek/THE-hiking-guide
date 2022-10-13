@@ -34,8 +34,17 @@
   color: orange;
 }
 
+.navLink {
+  padding: 0 10px 0 0;
+}
+
+.indexHike {
+  color: rgb(64, 64, 64);
+}
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: rgb(230, 230, 230);
 }
 
 #show-page {
