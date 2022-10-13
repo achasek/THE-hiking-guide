@@ -2,17 +2,16 @@
 
 <div class="indexHikesAll">
     <% hikes.forEach(function(h) { %>
-    <div class="indexHike">
-        <div class="hikeTitle">
-            <h2><%= h.name %></h2>
-            <h2><%= h.location %></h2>
-            <p class="hikeCaption"><%= h.caption %></p>
-        <button class ="detailBtn"><a class="detailLink" href="/hikes/<%= h._id %>">Details</a></button>
+    <a href="/hikes/<%= h._id %>"><div class="indexHike">
+        <div class="hikeDesc">
+            <div class="hikeTitle">
+                <h2><%= h.name %></h2>
+                <h2><%= h.location %></h2>
+            </div>
+            <!-- <button class ="detailBtn"><a class="detailLink" href="/hikes/<%= h._id %>">Details</a></button> -->
         </div>
-        <!-- <p class="hikeCaption"><%= h.caption %></p>
-        <button class ="detailBtn"><a class="detailLink" href="/hikes/<%= h._id %>">Details</a></button> -->
         <img class="indexPic" src="<%= h.pictures %>" alt="Pictures of user's hike">
-    </div>
+    </div></a>
     <% }) %>
 </div>
 

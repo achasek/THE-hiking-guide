@@ -1,58 +1,73 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
-    <div>Name: </div>
-    <div><%= hike.name %></div>
-    <div>Location: </div>
-    <div><%= hike.location %></div>
-    <div>Caption: </div>
-    <div><%= hike.caption %></div>
-    <div>Open Status: </div>
-    <div><%= hike.isOpen ? 'Open' : 'Closed' %></div>
-    <div>
-        <% if(user && user._id.equals(hike.user)) { %>
-            <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete Post</button>
-            </form>
-           <button><a href="/hikes/<%= hike._id %>/edit">Edit Post</a></button>
-        <% } %>
-    </div>
-    <div>
-        <img src="<%= hike.pictures %>" alt="Pictures of user's hike">
-    </div>
-</section>
-<br>
-<h2>Comments</h2>
-<% if(user) { %>
-    <form id="add-comment" action="/hikes/<%= hike._id %>/comments" method="POST">
-        <label>Add Comment: </label>
-        <textarea name="content"></textarea>
-        <input type="submit" value="Post Comment">
-    </form>
-<% } %>
-<% if(hike.comments.length) { %>
-    <table>
-        <tbody>
-            <% hike.comments.forEach(function(c) { %>
-                <tr>
-                    <td><%= c.userName %>: </td>
-                    <td><%= c.content %></td>
-                    <td>
-                        <% if(user && user._id.equals(c.user)) { %>
-                            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                                <button type="submit">Remove Comment</button>
-                            </form>
-                            <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
-                                <input name="content" value="<%= c.content %>">
-                                <button type="submit">Edit Comment</button>
-                            </form>
+    <div id="show-page-background">
+        <div class="show-page-container">
+            <div class="show-desc">
+                <div class="show-title">
+                    <div>
+                        <%= hike.name %>
+                    </div>
+                    <div>
+                        <%= hike.location %>
+                    </div>
+                </div>
+                <div>
+                    <%= hike.caption %>
+                </div>
+                <div>Open Status: </div>
+                <div>
+                    <%= hike.isOpen ? 'Open' : 'Closed' %>
+                </div>
+                <div>
+                    <% if(user && user._id.equals(hike.user)) { %>
+                        <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete Post</button>
+                        </form>
+                        <button><a href="/hikes/<%= hike._id %>/edit">Edit Post</a></button>
                         <% } %>
-                    </td>
-                </tr>
-            <% }) %>
-            </tr>
-        </tbody>
-    </table>
-<% } %>  
+                </div>
+            </div>
+            <div>
+                <img class="showImg" src="<%= hike.pictures %>" alt="Pictures of user's hike">
+            </div>
+            <br>
+            <h2>Comments</h2>
+            <% if(user) { %>
+                <form id="add-comment" action="/hikes/<%= hike._id %>/comments" method="POST">
+                    <label>Add Comment: </label>
+                    <textarea name="content"></textarea>
+                    <input class="postCommentBtn" type="submit" value="Post">
+                </form>
+                <% } %>
+                    <% if(hike.comments.length) { %>
+                        <table>
+                            <tbody>
+                                <% hike.comments.forEach(function(c) { %>
+                                    <tr>
+                                        <td>
+                                            <%= c.userName %>:
+                                        </td>
+                                        <td>
+                                            <%= c.content %>
+                                        </td>
+                                        <td>
+                                            <% if(user && user._id.equals(c.user)) { %>
+                                                <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                                                    <button type="submit">Remove Comment</button>
+                                                </form>
+                                                <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
+                                                    <input name="content" value="<%= c.content %>">
+                                                    <button type="submit">Edit Comment</button>
+                                                </form>
+                                                <% } %>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                                        </tr>
+                            </tbody>
+                        </table>
+                        <% } %>
+        </div>
+    </div>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
