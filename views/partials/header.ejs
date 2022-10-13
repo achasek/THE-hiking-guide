@@ -8,12 +8,14 @@
   <title><%= title %></title>
 </head>
 <body>
-    <nav>
-        <a href="/hikes">All Hikes</a>
-        <% if(user) { %>
-            <a href="/hikes/new">Post Hike</a>
-            <a href="/logout">Sign Out</a>
-        <% } else { %>
-            <a href="/auth/google">Sign In</a>
-        <% } %>
+    <nav class="navigation">
+        <ul>
+            <li><a class="navLink" href="/hikes">All Hikes</a></li>
+            <% if(user) { %>
+                <li><a class="navLink" href="/hikes/new">Post Hike</a></li>
+                <li><a class="navLink" href="/logout">Sign Out</a></li>
+            <% } else { %>
+                <li><a class="navLink" href="/auth/google">Sign In</a></li>
+            <% } %>
+        </ul> 
     </nav>
