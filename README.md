@@ -8,14 +8,21 @@ I have combined two of my favorite hobbies into a collective passion project. I 
 
 ## Technologies Used
 
-HTML
-CSS
-Node.JS
-Express
-MongoDB/ MongoDB Atlas
-Mongoose
-Google OAuth
-Google Cloud
+..* HTML
+..* CSS
+..* Node.JS
+..* Express
+..* MongoDB/ MongoDB Atlas
+..* Mongoose
+..* Google OAuth
+..* Google Cloud
+
+## Screenshots
+
+![alt text](ssOne.png)
+![alt text](ssTwo.png)
+![alt text](ssThree.png)
+
 
 ## Getting Started
 
