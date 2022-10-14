@@ -1,17 +1,34 @@
 <%- include('../partials/header') %>
 
+<div class="edit-form">
 <form id="new-form" action="/hikes" method="POST">
-    <label>What the trail is called:</label>
-    <input type="text" name="name">
-    <label>Where you hiked:</label>
-    <input type="text" name="location">
-    <label>Is it open?</label>
-    <input type="checkbox" name="isOpen" checked>
-    <label>Show us some pictures!</label>
-    <input type="text" placeholder="www.imgur/....com, ..." name="pictures">
-    <label>Tell us about it!:</label>
-    <input type="text" name="caption">
-    <input type="submit" value="Post your story">
+    <div class="edit-name">
+        <label class="edit-label" >What the trail is called:</label>
+        <input class="edit-input" type="text" name="name">
+    </div>
+    <div class="edit-location">
+        <label class="edit-label" >Where you hiked:</label>
+        <input class="edit-input" type="text" name="location">
+    </div>
+    <div class="edit-open">
+        <label class="edit-label" >Is it open?</label>
+        <input class="edit-input" type="checkbox" name="isOpen" checked>
+    </div>
+    <div class="edit-pictures">
+        <label class="edit-label" >Show us some pictures!</label>
+        <input class="edit-input" type="text" placeholder="www.imgur/....com, ..." name="pictures">
+    </div>
+    <div class="edit-caption">
+        <label class="edit-label" >Tell us about it!:</label>
+        <input class="edit-input" type="text" name="caption">
+    </div>
+</div>
+    <div class="edit-submit">
+        <button type="submit">Post</button>
+    </div>
 </form>
 
 <%- include('../partials/footer') %>
+
+<!-- <input type="text" placeholder="www.imgur/....com, ..." name="pictures">
+<input type="submit" value="Post your story"> -->

@@ -1,18 +1,32 @@
 <%- include('../partials/header') %>
 
-<form action="/hikes/<%= hike._id %>?_method=PUT" method="POST">
-    <label>What the trail is called:</label>
-    <input type="text" name="name">
-    <label>Where you hiked:</label>
-    <input type="text" name="location">
-    <label>Is it open?</label>
-    <input type="checkbox" name="isOpen" checked>
-    <label>Show us some pictures!</label>
-    <input type="text" placeholder="www.imgur/....com, ..." name="pictures">
-    <label>Tell us about it!:</label>
-    <input type="text" name="caption">
-    <button type="submit">Update Hike</button>
-</form>
+<div class="edit-form">
+    <form action="/hikes/<%= hike._id %>?_method=PUT" method="POST">
+        <div class="edit-name">
+            <label class="edit-label" >What the trail is called:</label>
+            <input class="edit-input" type="text" name="name" value="<%= hike.name %>">
+        </div>
+        <div class="edit-location">
+            <label class="edit-label" >Where you hiked:</label>
+            <input class="edit-input" type="text" name="location" value="<%= hike.location %>">
+        </div>
+        <div class="edit-open">
+            <label class="edit-label" >Is it open?</label>
+            <input class="edit-input" type="checkbox" name="isOpen" checked>
+        </div>
+        <div class="edit-pictures">
+            <label class="edit-label" >Show us some pictures!</label>
+            <input class="edit-input" type="text" value="<%= hike.pictures %>" name="pictures">
+        </div>
+        <div class="edit-caption">
+            <label class="edit-label">Tell us about it!:</label>
+            <input class="edit-input" type="text" name="caption" value="<%= hike.caption %>">
+        </div>
+    </div>
+        <div class="edit-submit">
+            <button type="submit">Update</button>
+        </div>
+    </form>
 
 
 <%- include('../partials/footer') %>
