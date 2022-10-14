@@ -19,9 +19,9 @@ I have combined two of my favorite hobbies into a collective passion project. I 
 
 ## Screenshots
 
-![alt text](ssOne.png)
-![alt text](ssTwo.png)
-![alt text](ssThree.png)
+![alt text](./images/ssOne.png)
+![alt text](./images/ssTwo.png)
+![alt text](./images/ssThree.png)
 
 
 ## Getting Started
