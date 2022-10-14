@@ -8,9 +8,9 @@ I have combined two of my favorite hobbies into a collective passion project. I 
 
 ## Technologies Used
 
-..* HTML
-..* CSS
-..* Node.JS
+..* HTML5/EJS
+..* CSS3
+..* JavaScript ES2022/Node.JS
 ..* Express
 ..* MongoDB/ MongoDB Atlas
 ..* Mongoose
@@ -27,6 +27,7 @@ I have combined two of my favorite hobbies into a collective passion project. I 
 ## Getting Started
 
 The best part of the deal: all you gotta do is click this link: https://the-hiking-guide.onrender.com
+Although, this app is best enjoyed in Google Chrome
 
 ## Author
 
@@ -37,6 +38,11 @@ https://www.linkedin.com/in/chase-ak/
 
 * 0.2
     * Upgrade comment section
+    * Add animated homepage 
+    * Add review functionality
+    * Add dynamic open statuses on hikes relying on APIs or time of year
+    * Add multer middleware to allow direct image uploads
+    * Add responsive design
     * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
