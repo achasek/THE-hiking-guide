@@ -259,3 +259,70 @@ body {
   display: flex;
   justify-content: center;
 }
+
+#home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-text {
+  display: flex;
+  justify-content: center;
+  color: transparent;
+  background: conic-gradient(
+    rgb(190, 184, 210) 12%,
+    rgb(155, 50, 170) 12%, rgb(155, 50, 170) 33%,
+    rgb(245, 203, 72) 33%, rgb(245, 203, 72) 55%,
+    rgb(240, 163, 51) 55%, rgb(240, 163, 51) 70%,
+    rgb(235, 53, 51) 70%, rgb(235, 53, 51) 87%,
+    rgb(125, 149, 237) 87%
+  );
+  background-size: 49%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 150px;
+
+  animation: expand-reverse 0.5s ease forwards;
+}
+
+.home-text:hover {
+  cursor: pointer;
+  animation: expand 0.5s ease forwards;
+}
+
+@keyframes expand {
+  0% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 55%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 325%;
+    background-position: -10em -4em;
+  }
+}
+
+@keyframes expand-reverse {
+  0% {
+    background-size: 325%;
+    background-position: -10em -4em;
+  }
+  20% {
+    background-size: 55%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
+}

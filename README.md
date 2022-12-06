@@ -8,22 +8,22 @@ I have combined two of my favorite hobbies into a collective passion project. I 
 
 ## Technologies Used
 
-- HTML5/EJS
-- CSS3
-- JavaScript ES2022/Node.JS
-- Express
-- MongoDB/ MongoDB Atlas
-- Mongoose
-- Google OAuth
-- Google Cloud
+..* HTML5/EJS
+..* CSS3
+..* JavaScript ES2022/Node.JS
+..* Express
+..* Passport.js
+..* RESTful routing
+..* MongoDB/ MongoDB Atlas
+..* Mongoose
+..* Google OAuth
+..* Google Cloud
 
 ## Screenshots
 
-![alt text](./images/ssOne.png) 
-<img src="./main_app/static/assets/images/ssOne.png" width="900">
-![alt text](./images/ssTwo.png)
-![alt text](./images/ssThree.png)
-
+<img src="./public/images/ssOne.png" width="900">
+<img src="./public/images/ssTwo.png" width="900">
+<img src="./public/images/ssThree.png" width="900">
 
 ## Getting Started
 
@@ -44,6 +44,7 @@ https://www.linkedin.com/in/chase-ak/
     * Add dynamic open statuses on hikes relying on APIs or time of year
     * Add multer middleware to allow direct image uploads
     * Add responsive design
+    * Add URL validator for input form
     * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release

@@ -1,6 +1,19 @@
-<%- include('./partials/header') %>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title><%= title %></title>
+</head>
+<body>
+  <div id="home-page"> 
+    <h1 class="home-text">Take a Hike</h1>
+      <div class="home-btns">
+        <button id="home-btns"><a href="/hikes">All Hikes</a></a></button>
+        <button id="home-btns"><a href="/auth/google">Sign In</a></button>
+      </div>
+  </div>
 
 <%- include('./partials/footer') %>

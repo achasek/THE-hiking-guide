@@ -2,13 +2,15 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+/* GET default home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/hikes')
+  res.render('index', { title: 'Express' });
 });
+
+// No home page -- straight to index view
+// router.get('/', function(req, res, next) {
+//   res.redirect('/hikes')
+// });
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
