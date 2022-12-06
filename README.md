@@ -8,16 +8,16 @@ I have combined two of my favorite hobbies into a collective passion project. I 
 
 ## Technologies Used
 
-..* HTML5/EJS
-..* CSS3
-..* JavaScript ES2022/Node.JS
-..* Express
-..* Passport.js
-..* RESTful routing
-..* MongoDB/ MongoDB Atlas
-..* Mongoose
-..* Google OAuth
-..* Google Cloud
+- HTML5/EJS
+- CSS3
+- JavaScript ES2022/Node.JS
+- Express
+- Passport.js
+- RESTful routing
+- MongoDB/ MongoDB Atlas
+- Mongoose
+- Google OAuth
+- Google Cloud
 
 ## Screenshots
 
