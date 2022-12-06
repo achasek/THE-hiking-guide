@@ -2,24 +2,25 @@
 
 A simple and social medium for hiking!
 
-## Description
+## About
 
 I have combined two of my favorite hobbies into a collective passion project. I have built a simple, full-stack web application that utilizes full CRUD functionality: Creating, Reading, Updating, and Deleting data. The data in question? Data you can actually use to take a hike. If you're anything like me the past week having forgotten what outside is even like, you probably need it! 
 
 ## Technologies Used
 
-..* HTML5/EJS
-..* CSS3
-..* JavaScript ES2022/Node.JS
-..* Express
-..* MongoDB/ MongoDB Atlas
-..* Mongoose
-..* Google OAuth
-..* Google Cloud
+- HTML5/EJS
+- CSS3
+- JavaScript ES2022/Node.JS
+- Express
+- MongoDB/ MongoDB Atlas
+- Mongoose
+- Google OAuth
+- Google Cloud
 
 ## Screenshots
 
-![alt text](./images/ssOne.png)
+![alt text](./images/ssOne.png) 
+<img src="./main_app/static/assets/images/ssOne.png" width="900">
 ![alt text](./images/ssTwo.png)
 ![alt text](./images/ssThree.png)
 
@@ -46,3 +47,4 @@ https://www.linkedin.com/in/chase-ak/
     * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
+    
